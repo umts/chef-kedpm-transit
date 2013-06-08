@@ -12,17 +12,27 @@ include_recipe 'rsnapshot::client'
 directory node['kedpm']['shared-dir']
 
 search(:users, "groups:sysadmin AND NOT action:remove").each do |sa|
-  home = Etc.getpwuid(sa['uid']).dir
+  begin
 
-  directory "#{home}/.kedpm/" do
-    owner sa['id']
-    mode '0700'
-  end
+    home = Etc.getpwuid(sa['uid']).dir
 
-  template "#{home}/.kedpm/config.xml" do
-    owner sa['id']
-    mode '0600'
-    variables({:shared_dir => node['kedpm']['shared-dir']})
+    directory "#{home}/.kedpm/" do
+      owner sa['id']
+      mode '0700'
+    end
+
+    template "#{home}/.kedpm/config.xml" do
+      owner sa['id']
+      mode '0600'
+      variables({:shared_dir => node['kedpm']['shared-dir']})
+    end
+
+  rescue ArgumentError
+
+    log "User, #{sa['id']}, does not exist - skipping kedpm config" do
+      level :info
+    end
+
   end
 end
 
