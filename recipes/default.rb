@@ -11,6 +11,17 @@ include_recipe 'rsnapshot::client'
 
 directory node['kedpm']['shared-dir']
 
+directory "/etc/skel/.kedpm/" do
+  owner 'root'
+  mode '0700'
+end
+
+template "/etc/skel/.kedpm/config.xml" do
+  owner 'root'
+  mode '0600'
+  variables({:shared_dir => node['kedpm']['shared-dir']})
+end
+
 search(:users, "groups:sysadmin AND NOT action:remove").each do |sa|
   begin
 
