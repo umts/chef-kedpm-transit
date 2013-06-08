@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config verion="0.1">
+  <options>
+    <option name="save-mode">ask</option>
+    <option name="fpm-database"><%= @shared_dir %>transit-passwords.fpm</option>
+  </options>
+  <patterns>
+    <pattern>User{~(name)?}/Pass{~(word)?}{ }:{ }{user}/{password}</pattern>
+    <pattern>User{~(name)?}{ }:{ }{user}</pattern>
+    <pattern>Pass{~(word)?}{ }:{ }{password}</pattern>
+    <pattern>Host{~(name)?}{ }:{ }{url}</pattern>
+    <pattern>Server{ }:{ }{url}</pattern>
+  </patterns>
+</config>
