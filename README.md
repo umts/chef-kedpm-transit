@@ -1,12 +1,15 @@
 Description
 ===========
 This cookbook is a wrapper cookbook for our Transit-specific
-modifications to (our own) [kedpm cookbook][kpm-cb].  It does the
-following:
+modifications to (our own) [kedpm cookbook][kpm-cb].
 
-* Make a folder to house the shared password file.
-* Sets all sysadmin users to use said shared password file.
-* Adds the directory to those backed up by [rsnapshot][rs-cb]
+Recipes
+======
+* `password-dir` - Makes a folder to house the shared password file.
+* `sysadmins` - Sets all sysadmin users to use said shared password file.
+* `rsnapshot` - Adds the directory to those backed up by [rsnapshot][rs-cb]
+* `default` - Used to composite the above recipes, also includes the
+  kedpm recipe itself
 
 Attributes
 ==========

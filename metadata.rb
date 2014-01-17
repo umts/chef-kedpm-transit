@@ -1,9 +1,10 @@
 maintainer       "UMass Transit Service"
 maintainer_email "transit-mis@admin.umass.edu"
 license          "All rights reserved"
-description      "Installs/Configures chef-kedpm-transit"
+description      "Customizes UMTS's kedpm install"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.0.1"
+version          "0.0.2"
+name             "kedpm-transit"
 
 depends "kedpm"
 depends "rsnapshot"
