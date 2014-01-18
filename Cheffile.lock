@@ -1,0 +1,48 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    build-essential (1.4.2)
+    cron (1.2.8)
+    iptables (0.12.0)
+    openssh (1.3.2)
+      iptables (>= 0.0.0)
+    python (1.4.4)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+    rsync (0.8.4)
+    sudo (2.3.0)
+    users (1.6.0)
+    yum (3.0.4)
+
+GIT
+  remote: https://github.com/umts/chef-kedpm
+  ref: master
+  sha: b007f5df8fc2541052d9dca4453f4a7b592b200b
+  specs:
+    kedpm (0.0.2)
+      python (>= 0.0.0)
+
+GIT
+  remote: https://github.com/umts/rsnapshot
+  ref: master
+  sha: eca014c61951be31855404dfdc7b7a07e50eb49c
+  specs:
+    rsnapshot (0.0.1)
+      cron (>= 0.0.0)
+      openssh (>= 0.0.0)
+      rsync (>= 0.0.0)
+      sudo (>= 0.0.0)
+
+PATH
+  remote: .
+  specs:
+    kedpm-transit (0.0.2)
+      kedpm (>= 0.0.0)
+      rsnapshot (>= 0.0.0)
+
+DEPENDENCIES
+  kedpm (>= 0)
+  kedpm-transit (>= 0)
+  rsnapshot (>= 0)
+  users (>= 0)
+
