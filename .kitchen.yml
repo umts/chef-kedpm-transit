@@ -12,6 +12,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[users::sysadmins]
+      - role[sysadmins]
       - recipe[kedpm-transit::default]
-    attributes:
+      - recipe[kedpm-transit-test::default]
+    attributes: { kedpm: { shared-dir: "/root/passwords/" } }

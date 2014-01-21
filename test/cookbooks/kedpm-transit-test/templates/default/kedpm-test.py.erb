@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+from kedpm.config import *
+import sys
+
+config = Configuration()
+config.open()
+
+if config.options['fpm-database'] == "<%= @shared_dir %>transit-passwords.fpm":
+  print "Configuration is as expected"
+  sys.exit(0)
+else:
+  print "Configuration isn't as expected"
+  sys.exit(1)

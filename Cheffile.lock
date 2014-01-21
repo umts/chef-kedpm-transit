@@ -40,9 +40,16 @@ PATH
       kedpm (>= 0.0.0)
       rsnapshot (>= 0.0.0)
 
+PATH
+  remote: test/cookbooks/kedpm-transit-test
+  specs:
+    kedpm-transit-test (0.0.1)
+
 DEPENDENCIES
   kedpm (>= 0)
   kedpm-transit (>= 0)
+  kedpm-transit-test (>= 0)
   rsnapshot (>= 0)
+  sudo (>= 0)
   users (>= 0)
 
