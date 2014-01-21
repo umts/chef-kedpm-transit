@@ -9,5 +9,5 @@
 include_recipe 'rsnapshot::client'
 
 unless node['rsnapshot']['client']['paths'].include? node['kedpm']['shared-dir']
-  node.normal['rsnapshot']['client']['paths'] += [ node['kedpm']['shared-dir'] ]
+  node.normal['rsnapshot']['client']['paths'] += [node['kedpm']['shared-dir']]
 end

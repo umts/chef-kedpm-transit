@@ -11,7 +11,7 @@ namespace :style do
 end
 
 desc 'Run all style checks'
-task style: ['style:chef', 'style:ruby']
+task style: %w{style:chef style:ruby}
 
 require 'kitchen'
 desc 'Run Test Kitchen integration tests'
@@ -22,4 +22,4 @@ task :integration do
   end
 end
 
-task default: ['style', 'integration']
+task default: %w{style integration}

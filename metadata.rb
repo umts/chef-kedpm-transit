@@ -1,10 +1,10 @@
-maintainer       "UMass Transit Service"
-maintainer_email "transit-mis@admin.umass.edu"
-license          "All rights reserved"
-description      "Customizes UMTS's kedpm install"
+maintainer       'UMass Transit Service'
+maintainer_email 'transit-mis@admin.umass.edu'
+license          'All rights reserved'
+description      'Customizes UMTS\'s kedpm install'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.0.2"
-name             "kedpm-transit"
+version          '0.0.2'
+name             'kedpm-transit'
 
-depends "kedpm"
-depends "rsnapshot"
+depends 'kedpm'
+depends 'rsnapshot'
