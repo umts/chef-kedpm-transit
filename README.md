@@ -16,5 +16,7 @@ Attributes
 * `node['kedpm']['shared-dir']` - The directory in which we will keep
   our shared password db file.  The default is `/usr/local/share/passwords/`
 
+[![Build Status](https://secure.travis-ci.org/umts/chef-kedpm-transit.png)](http://travis-ci.org/umts/chef-kedpm-transit)
+
 [kpm-cb]: https://github.com/umts/chef-kedpm
 [rs-cb]: https://github.com/umts/rsnapshot
