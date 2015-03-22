@@ -5,7 +5,7 @@ modifications to (our own) [kedpm cookbook][kpm-cb].
 
 Recipes
 ======
-* `password-dir` - Makes a folder to house the shared password file.
+* `password_dir` - Makes a folder to house the shared password file.
 * `sysadmins` - Sets all sysadmin users to use said shared password file.
 * `rsnapshot` - Adds the directory to those backed up by [rsnapshot][rs-cb]
 * `default` - Used to composite the above recipes, also includes the

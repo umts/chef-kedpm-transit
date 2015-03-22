@@ -7,5 +7,5 @@
 # All rights reserved - Do Not Redistribute
 #
 include_recipe 'kedpm'
-include_recipe 'kedpm-transit::password-dir'
+include_recipe 'kedpm-transit::password_dir'
 include_recipe 'kedpm-transit::sysadmins'

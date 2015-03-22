@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-kedpm-transit
-# Recipe:: password-dir
+# Recipe:: password_dir
 #
 # Copyright 2013, UMass Transit Service
 #
