@@ -1,7 +1,7 @@
 AllCops:
   Include:
     - Rakefile
-  Excludes:
+  Exclude:
     - .kitchen/**/*
 
 Encoding:
