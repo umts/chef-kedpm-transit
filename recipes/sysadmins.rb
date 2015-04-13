@@ -17,26 +17,22 @@ template '/etc/skel/.kedpm/config.xml' do
   variables(shared_dir: node['kedpm']['shared-dir'])
 end
 
-search(:users, 'groups:sysadmin AND NOT action:remove').each do |sa|
-  begin
+if Chef::Config[:solo] && !chef_solo_search_installed?
+  Chef::Log.warn('This recipe uses search. Chef Solo does not support search unless you install the chef-solo-search cookbook.')
+else
+  search(:users, 'groups:sysadmin AND NOT action:remove').each do |sa|
+    sa['username'] ||= sa['id']
+    sa['home'] ||= "/home/#{sa['username']}"
 
-    home = Etc.getpwuid(sa['uid']).dir
-
-    directory "#{home}/.kedpm/" do
-      owner sa['id']
+    directory "#{sa['home']}/.kedpm/" do
+      owner sa['username']
       mode '0700'
     end
 
-    template "#{home}/.kedpm/config.xml" do
-      owner sa['id']
+    template "#{sa['home']}/.kedpm/config.xml" do
+      owner sa['username']
       mode '0600'
       variables(shared_dir: node['kedpm']['shared-dir'])
-    end
-
-  rescue ArgumentError
-
-    log "User, #{sa['id']}, does not exist - skipping kedpm config" do
-      level :info
     end
   end
 end
